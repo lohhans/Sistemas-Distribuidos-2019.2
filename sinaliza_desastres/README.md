@@ -1,6 +1,6 @@
 # sinaliza_desastres
 
-Alerte um desastre que você presenciou!
+App para alerta de desastres
 
 ## Getting Started
 

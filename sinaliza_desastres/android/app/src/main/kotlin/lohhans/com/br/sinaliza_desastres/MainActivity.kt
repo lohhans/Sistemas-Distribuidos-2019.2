@@ -1,4 +1,4 @@
-package com.lohhans.sinaliza_desastres
+package lohhans.com.br.sinaliza_desastres
 
 import android.os.Bundle
 
