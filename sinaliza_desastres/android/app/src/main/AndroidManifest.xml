@@ -16,6 +16,7 @@
         android:label="sinaliza_desastres"
         android:icon="@mipmap/ic_launcher">
 
+<!--        TODO: Encriptar chave de API do Maps - Armstrong -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBgE1AdhzYw58PlMzj3YMnAbDbvle3yJwE"/>
