@@ -1,8 +1,10 @@
+import 'dart:ui' as prefix0;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
-import 'Usuario.dart';
+import 'models/Usuario.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tutorial Maps com Degrade',
       theme: ThemeData(
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.red,
       ),
       home: MyHomePage(),
     );
@@ -36,9 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: new AppBar(
+        backgroundColor: Colors.red,
         title: new Text("Sinaliza desastre",
         style: TextStyle(
-            color: Colors.black54,
+            color: Colors.white,
             fontSize: 20.0,
             fontWeight: FontWeight.bold
           ),
@@ -60,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.my_location, color: Colors.white),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.red,
         onPressed: (){
           getLocation();
         },
@@ -76,48 +79,48 @@ class _MyHomePageState extends State<MyHomePage> {
                     backgroundColor: Colors.white,
                     child: new Icon(
                         Icons.person_outline,
-                        color: Colors.black),
+                        color: Colors.red),
                   ),
               ),
               new ListTile(
                 title: new Text("Desastres",
                   style: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black,
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: new Icon(
                     Icons.map,
-                    color: Colors.black54),
+                    color: Colors.black),
               ),
               new Divider(),
 
               new ListTile(
                 title: new Text("Configurações",
                   style: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black,
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: new Icon(
                     Icons.build,
-                    color: Colors.black54),
+                    color: Colors.black),
               ),
               new Divider(),
 
               new ListTile(
                 title: new Text("Sobre",
                   style: TextStyle(
-                      color: Colors.black54,
+                      color: Colors.black,
                       fontSize: 17.0,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: new Icon(
                     Icons.info,
-                    color: Colors.black54),
+                    color: Colors.black),
               )
             ],
           ),
