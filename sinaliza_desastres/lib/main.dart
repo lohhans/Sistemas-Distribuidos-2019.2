@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'Usuario.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tutorial Maps com Degrade',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: MyHomePage(),
     );
@@ -34,6 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: new AppBar(
+        title: new Text("Sinaliza desastre",
+        style: TextStyle(
+            color: Colors.black54,
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+      ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -46,38 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
               initialCameraPosition: CameraPosition(target: LatLng(-8.9068, -36.4943), zoom: 15.75),
             ),
           ),
-          Positioned(
-            child: IgnorePointer(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    stops: [0.2, 0.4],
-                    colors: [Colors.white, Color.fromRGBO(255, 255, 225, 0)]
-                  ),
-                ),
-              ),
-            ),
-            top: 0,
-            left: 0,
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-          ),
-          Positioned(
-            width: MediaQuery.of(context).size.width,
-            top: 60.0,
-            left: 20.0,
-            child: Text(
-              'Seja bem vindo!',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 35.0,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -87,6 +65,64 @@ class _MyHomePageState extends State<MyHomePage> {
           getLocation();
         },
       ),
+
+        drawer: new Drawer(
+          child: new ListView(
+            children: <Widget>[
+              new UserAccountsDrawerHeader(
+                  accountName: new Text("Nome User"),
+                  accountEmail: new Text("Nome Email"),
+                  currentAccountPicture: new CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: new Icon(
+                        Icons.person_outline,
+                        color: Colors.black),
+                  ),
+              ),
+              new ListTile(
+                title: new Text("Desastres",
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+                trailing: new Icon(
+                    Icons.map,
+                    color: Colors.black54),
+              ),
+              new Divider(),
+
+              new ListTile(
+                title: new Text("Configurações",
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+                trailing: new Icon(
+                    Icons.build,
+                    color: Colors.black54),
+              ),
+              new Divider(),
+
+              new ListTile(
+                title: new Text("Sobre",
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold
+                  ),
+                ),
+                trailing: new Icon(
+                    Icons.info,
+                    color: Colors.black54),
+              )
+            ],
+          ),
+        )
+
     );
   }
 }
