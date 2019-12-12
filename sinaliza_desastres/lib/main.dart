@@ -110,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontWeight: FontWeight.bold
                   ),
                 ),
+
                 trailing: new Icon(
                     Icons.build,
                     color: Colors.black),
@@ -117,6 +118,12 @@ class _MyHomePageState extends State<MyHomePage> {
               new Divider(),
 
               new ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaSobre()),
+                  );
+                },
                 title: new Text("Sobre",
                   style: TextStyle(
                       color: Colors.black,
@@ -127,7 +134,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 trailing: new Icon(
                     Icons.info,
                     color: Colors.black),
-              )
+
+              ),
+
+
             ],
           ),
         )
@@ -135,3 +145,61 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+class TelaSobre extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Sobre"),
+      ),
+      body: Column(
+
+        children: <Widget>[
+
+          Text('\n\tAplicativo desenvolvido pela:\n',
+            style: TextStyle(
+                color: Colors.black54,
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold
+            ),
+
+          ),
+          Image(
+            image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp6Nm7HzKFNx178MTpplsTSUmWphqNYsfAdSFkEYRrBXNgvuUj&s'),
+            height: 300,
+            width: 400,
+          ),
+
+          Text('\n\nPelos alunos:\n\nAntônio Adelino\nArmstrong Lohãns',
+            style: TextStyle(
+                color: Colors.black54,
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold
+            ),
+
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//class SecondRoute extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("Second Route"),
+//      ),
+//      body: Center(
+//        child: RaisedButton(
+//          onPressed: () {
+//            Navigator.pop(context);
+//          },
+//          child: Text('Go back!'),
+//        ),
+//      ),
+//    );
+//  }
+//}
