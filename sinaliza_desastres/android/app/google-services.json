@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "175161581741",
+    "firebase_url": "https://sinaliza-desastres.firebaseio.com",
+    "project_id": "sinaliza-desastres",
+    "storage_bucket": "sinaliza-desastres.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175161581741:android:a83d5d43ade5869b9c2624",
+        "android_client_info": {
+          "package_name": "lohhans.com.br.sinaliza_desastres"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175161581741-sa9i7t589dpepdu7h3vl8df787afr4f0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "lohhans.com.br.sinaliza_desastres",
+            "certificate_hash": "ac3772b1fc91628703b043e841de4ae9b7a6ed36"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgE1AdhzYw58PlMzj3YMnAbDbvle3yJwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

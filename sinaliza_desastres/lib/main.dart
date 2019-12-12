@@ -1,4 +1,10 @@
 import 'dart:ui' as prefix0;
+import 'package:flutter_launcher_icons/android.dart';
+import 'package:flutter_launcher_icons/constants.dart';
+import 'package:flutter_launcher_icons/custom_exceptions.dart';
+import 'package:flutter_launcher_icons/ios.dart';
+import 'package:flutter_launcher_icons/main.dart';
+import 'package:flutter_launcher_icons/xml_templates.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
