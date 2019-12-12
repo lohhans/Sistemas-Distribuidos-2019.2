@@ -10,6 +10,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:sinaliza_desastres/models/Desastre.dart';
 import 'models/Usuario.dart';
 
 void main() => runApp(MyApp());
@@ -89,6 +90,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
               ),
               new ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaConfig()),
+                  );
+                },
                 title: new Text("Desastres",
                   style: TextStyle(
                       color: Colors.black,
@@ -103,6 +110,12 @@ class _MyHomePageState extends State<MyHomePage> {
               new Divider(),
 
               new ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaDeDesastres()),
+                  );
+                },
                 title: new Text("Configurações",
                   style: TextStyle(
                       color: Colors.black,
@@ -184,6 +197,85 @@ class TelaSobre extends StatelessWidget {
     );
   }
 }
+
+
+class TelaDeDesastres extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
+
+class TelaConfig extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final tipo = TextEditingController();
+    final latitude = TextEditingController();
+    final longitude = TextEditingController();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Desastres"),
+      ),
+      body:Column(
+
+        children: <Widget>[
+          TextFormField(
+            controller: tipo,
+            decoration: InputDecoration(
+                labelText: 'Tipo do desastre'
+            ),
+          ),
+
+          TextFormField(
+            controller: latitude,
+            decoration: InputDecoration(
+                labelText: 'Latitude'
+            ),
+          ),
+
+          TextFormField(
+            controller: longitude,
+            decoration: InputDecoration(
+                labelText: 'Longitude'
+            ),
+          ),
+
+      Text('\n'),
+        FloatingActionButton(
+
+            child: Icon(Icons.save_alt, color: Colors.white),
+            backgroundColor: Colors.green,
+            onPressed: (){
+              var desastre = Desastre(tipo.text, latitude.text, longitude.text);
+              print('tipo: '+desastre.tipo);
+              print('latitude: '+desastre.lat);
+              print('longitude: '+desastre.long);
+
+            },
+
+          ),
+
+
+        ],
+      ),
+
+    );
+  }
+}
+
 
 //class SecondRoute extends StatelessWidget {
 //  @override
